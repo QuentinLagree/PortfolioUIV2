@@ -1,0 +1,1 @@
+export let width_mobile: number = 1425;

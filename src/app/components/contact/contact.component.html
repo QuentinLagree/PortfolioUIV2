@@ -1,0 +1,172 @@
+<section id="contact" #contact>
+    <div class="container">
+        <div class="contact-container">
+
+            <form #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm)">
+                <h3>{{ 'contact.form.title' | translate}}</h3>
+                <div class="contact-personnal-information">
+                    <div class="input-group">
+                        <input type="text" required placeholder="{{ 'contact.form.input.name' | translate}}"
+                            [(ngModel)]="surname"
+                            [ngClass]="(surnameInput.valid || surnameInput.pristine) ? '' : 'alert'" name="surname"
+                            id="surname" maxlength="10" #surnameInput="ngModel" aria-describedby="surname">
+                        <div [hidden]="surnameInput.valid || surnameInput.pristine" class="invalid-feedback">
+                            {{ "contact.alert.surname" | translate}}
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" required placeholder="{{ 'contact.form.input.firstname' | translate}}"
+                            [(ngModel)]="firstname"
+                            [ngClass]="(firstnameInput.valid || firstnameInput.pristine) ? '' : 'alert'"
+                            name="firstname" id="firstname" #firstnameInput="ngModel" aria-describedby="firstname">
+                        <div [hidden]="firstnameInput.valid || firstnameInput.pristine" class="invalid-feedback">
+                            {{ "contact.alert.firstname" | translate}}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contact-message">
+                    <div class="input-group">
+                        <input type="email" required placeholder="{{ 'contact.form.input.email' | translate}}"
+                            [(ngModel)]="email" [ngClass]="(emailInput.valid || emailInput.pristine) ? '' : 'alert'"
+                            name="email" #emailInput="ngModel" id="email" aria-describedby="email">
+                        <div [hidden]="emailInput.valid || emailInput.pristine" class="invalid-feedback">
+                            {{ "contact.alert.email" | translate}}
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" required placeholder="{{ 'contact.form.input.subject' | translate}}"
+                            [(ngModel)]="subject" name="subject"
+                            [ngClass]="(subjectInput.valid || subjectInput.pristine) ? '' : 'alert'" id="subject"
+                            #subjectInput="ngModel" aria-describedby="subject">
+                        <div [hidden]="subjectInput.valid || subjectInput.pristine" class="invalid-feedback">
+                            {{ "contact.alert.subject" | translate}}
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <textarea type="text" required placeholder="{{ 'contact.form.input.message' | translate}}"
+                            [(ngModel)]="message"
+                            [ngClass]="(messageInput.valid || messageInput.pristine) ? '' : 'alert'" name="message"
+                            id="message" #messageInput="ngModel" aria-describedby="message" cols="30"
+                            rows="10"></textarea>
+                        <div [hidden]="messageInput.valid || messageInput.pristine" class="invalid-feedback">
+                            {{ "contact.alert.message" | translate}}
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn" [disabled]="!contactForm.form.valid && buttonState.getState() == buttonState.STATES.default" type="submit" [ngClass]="buttonState.getState()">
+                        {{ 'contact.form.btn-' + buttonState.getState() | translate}}
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="coords">
+            <h3>{{ 'contact.form.information.title' | translate}}</h3>
+            <ul>
+                <li>
+                    <div class="coord">
+                        <div class="smallsize">
+                            <a href="https://maps.app.goo.gl/xbkeKSHMLzjxGL5d7" target="_blank">
+                                <div class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M20 10C20 14.4183 12 22 12 22C12 22 4 14.4183 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10Z"
+                                            stroke="#21272A" stroke-width="1.5" />
+                                        <path
+                                            d="M12 11C12.5523 11 13 10.5523 13 10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10C11 10.5523 11.4477 11 12 11Z"
+                                            fill="#21272A" stroke="#21272A" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="bigsize">
+                            <div class="icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M20 10C20 14.4183 12 22 12 22C12 22 4 14.4183 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10Z"
+                                        stroke="#21272A" stroke-width="1.5" />
+                                    <path
+                                        d="M12 11C12.5523 11 13 10.5523 13 10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10C11 10.5523 11.4477 11 12 11Z"
+                                        fill="#21272A" stroke="#21272A" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <p><strong>{{ 'contact.form.information.adresse' | translate}} </strong> <a
+                                    href="https://maps.app.goo.gl/xbkeKSHMLzjxGL5d7" target="_blank">1026 route de
+                                    Cadours 31330 Launac</a></p>
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="coord">
+                        <div class="smallsize">
+                            <a href="tel:+33641494842">
+                                <div class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18.1183 14.702L14.0001 15.5C11.2184 14.1038 9.50007 12.5 8.50007 10L9.27002 5.8699L7.81459 2H4.06367C2.93612 2 2.04821 2.93178 2.21661 4.04668C2.63702 6.83 3.8766 11.8765 7.50007 15.5C11.3053 19.3052 16.7858 20.9564 19.8021 21.6127C20.9669 21.8662 22.0001 20.9575 22.0001 19.7655V16.1812L18.1183 14.702Z"
+                                            stroke="#21272A" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="bigsize">
+                            <div class="icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M18.1183 14.702L14.0001 15.5C11.2184 14.1038 9.50007 12.5 8.50007 10L9.27002 5.8699L7.81459 2H4.06367C2.93612 2 2.04821 2.93178 2.21661 4.04668C2.63702 6.83 3.8766 11.8765 7.50007 15.5C11.3053 19.3052 16.7858 20.9564 19.8021 21.6127C20.9669 21.8662 22.0001 20.9575 22.0001 19.7655V16.1812L18.1183 14.702Z"
+                                        stroke="#21272A" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <p><strong>{{ 'contact.form.information.phone' | translate}} </strong> <a
+                                    href="tel:+33641494842">+33 6 41 49 48 42</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="coord">
+                        <div class="smallsize">
+                            <a href="mailto:lagreequentindev21@gmail.com">
+                                <div class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 9L12 12.5L17 9" stroke="#21272A" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M2 17V7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17Z"
+                                            stroke="#21272A" stroke-width="1.5" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="bigsize">
+                            <div class="icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 9L12 12.5L17 9" stroke="#21272A" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M2 17V7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17Z"
+                                        stroke="#21272A" stroke-width="1.5" />
+                                </svg>
+                            </div>
+
+                            <p><strong>{{ 'contact.form.information.email' | translate}} </strong> <a
+                                    href="mailto:lagreequentindev21@gmail.com">lagreequentindev21&#64;gmail.com</a></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

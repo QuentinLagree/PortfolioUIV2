@@ -1,0 +1,16 @@
+<section id="about" #about>
+    @defer {
+        <h2 onchange="this.test()">{{ "about.title" | translate}}</h2>
+    } @placeholder (minimum 1000ms) {
+        <p>Placeholder content</p>
+    }
+    <figcaption>
+        <caption #paragraphs>
+            <p>{{ "about.description.1" | translate}}</p>
+            <p>{{ "about.description.2" | translate}}</p>
+            <p>{{ "about.description.3" | translate}}</p>
+            <!-- <p>Aujourd'hui je cherche a me spécialiser vers ce qui me plaît plus dans le web : ce que l'utilisateur voit. C'est pour cela que je me suis mis à développer des applications web avec l'aide d'Angular et Typescript. J'ai appris ce framework en suivant une <a href="https://www.youtube.com/watch?v=DTIYVffhJuU" target="_blank">formation de Simon Dieny</a> de 9h ou j'ai appris à créer <a href="https://pokemon-app-281ef.web.app/" target="_blank">une application web de gestion de Pokémon</a> et depuis je continue de pratiquer afin d'excéler dans cette partie du web. Donc j'ai réussi a mélanger mes 2 préférences du web : Le Javascript et le Front-end (Angular).</p> -->
+        </caption>
+        <a href="/assets/downloads/CV.pdf" role="button" download>{{"about.download" | translate}}</a>
+    </figcaption>
+</section>

@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root {
+    --primary:  hsl(254, 100%, 58%);
+    /* --primary: #5E2BFF; */
+    --primary-hover: #5328e2;
+    --primary-background: #12004D;
+
+    --secondary: #FB3640;
+    --secondary-hover: #c92d33;
+    --secondary-dark: #FA4750;
+    --text-color: #342E37;
+    --label-color: #666;
+
+    --outline-color-doing-project: rgba(54, 251, 110, 0.4);
+    --outline-color-hover: rgba(54, 202, 251, 0.4);
+
+    --white: #fff;
+    --unactive-element: #767179;
+    --shadow-color: rgba(0, 0, 0, .2);
+
+    --input-outline: #bbbaba;
+    --background-grey: #FAFAFA;
+
+    --alert-background: rgb(251, 54, 64, 0.4);
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

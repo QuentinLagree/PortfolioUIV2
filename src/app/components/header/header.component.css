@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 30px 14vw;
+}
+
+header main {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+header main .container {
+        width: 100%;
+    height: auto;
+    padding: 50px 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+header main .container .s-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header main .container .s-col .s-text-col {
+    display: flex;
+    flex-direction: column;
+}
+
+header main .container .profile-picture {
+    margin-bottom: 2%;
+    width: 150px;
+    height: 150px;
+    background-image: url("/assets/profile-picture.jpeg");
+    background-size: cover  ;
+    background-position-y: center;
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+header main .container .header__title {
+    font-size: 4vw; 
+        display: flex;
+        flex-direction: column;
+    margin-bottom: 25px;
+}
+
+header main .container .header__status {
+    font-size: 2.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header main .container .header__status span {
+    margin-left: 10px;
+}
+
+header main .container .header__status .cursor-typing {
+    /* display: inline-block; */
+    width: 2px;
+    height: 100%;
+    background-color: var(--primary);
+    margin: 0;
+    animation: blink .6s linear infinite alternate;
+}
+header main .container .header__baseline {
+    margin-top: 45px;
+    font-size: 1.5em;
+    width: 100%;
+}
+
+header main .container .header__status span {
+    color: var(--primary);
+}
+
+header main .container .header__call-to-scroll {
+    position: relative;
+    margin-top: 4%;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+}
+
+header main .container .header__call-to-scroll:hover .header__call-to-scroll--label {
+    animation-play-state: paused;
+}
+
+header main .container .header__call-to-scroll--arrow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: var(--white);
+    border-radius: inherit;
+}
+
+header main .container .header__call-to-scroll--label {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 10s linear infinite;
+}
+
+
+header main .container .header__call-to-scroll--label--letter {
+    position: absolute;
+    left: 50%;
+    font-size: 1.2em;
+    transform-origin: 0 100px;
+}
+
+@keyframes rotateText {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotateTextDisabled {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+header main .container .header__call-to-scroll--scroll-icon {
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    scale: 0.8;
+}
+
+header main .container .header__call-to-scroll--scroll-icon svg{
+    position: relative;
+    width: 100%;
+    height: 45%;
+    left: 0;
+    border-radius: 50%;
+    width: 5em;
+    animation: scrollIcon 1.5s linear infinite;
+    
+}
+
+header main .container .header__call-to-scroll--scroll-icon svg path {
+    stroke: var(--label-color);
+}
+
+@keyframes scrollIcon {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(25%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes blink {
+    0% {opacity: 1;}
+    40% {opacity: 1;}
+    60% {opacity: 0;}
+    100% {opacity: 0;}
+  }

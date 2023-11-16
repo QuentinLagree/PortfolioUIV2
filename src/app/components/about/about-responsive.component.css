@@ -1,0 +1,37 @@
+@media screen and (max-width: 850px) {
+    #about {
+
+        background-image: none;
+    padding: 2em;
+    padding-bottom: 5em;
+    clip-path: none;
+    }
+
+    #about h2 {
+        text-align: left;
+        font-size: 1.8em;
+    }
+
+    #about figcaption {
+        justify-content: flex-start;
+    }
+
+    #about figcaption caption  {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 2em;
+    }
+
+    #about figcaption caption p {
+        margin: 2em 0;
+        font-size: 0.75em;
+        line-height: 1.4em;
+        width: 100%;
+    }
+    
+    #about a {
+        width: 80%;
+        padding: 1.4em 0;
+        font-size: .8em;
+    }
+}

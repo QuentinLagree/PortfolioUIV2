@@ -1,0 +1,76 @@
+@media screen and (max-width: 970px) {
+    header {
+        padding: 0 8vw 80px;
+    }
+
+    header main {margin: 0;}
+
+
+    header main .container .header__title {
+        font-size: 4.8vw;
+    }
+
+    header main .container .header__status {
+        font-size: 2.5vw;
+    }
+
+
+    header main .container .header__baseline {
+        font-size: 2.2vw;
+        width: 100%;
+    }
+
+    header main .container .header__call-to-scroll {
+        scale: 0.8;
+    margin-top: 10vw;
+
+    }
+}
+
+@media screen and (max-width: 640px) {
+    header {
+        padding: 10px 0vw 0;
+        height: auto;
+    }
+
+    header main {
+        margin: 0;
+    }
+
+    header main .container {
+        padding: 15px 35px 5vh;
+        margin: 0;
+    }
+    header .header__title,
+    header main .container .header__status,
+    header main .container .header__status span,
+    header .header__baseline{
+        width: 100%;
+    }
+
+    header main .container .header__title {
+        font-size: 2em;
+        width: 100%;
+    }
+
+    header main .container .header__status {
+        font-size: 1.2em;
+        width: 100%;
+    }
+    
+    header main .container .header__status span {
+        width: auto;
+
+    }
+    
+    header main .container .header__baseline {
+        display: none;
+    }
+    
+    header main .container .profile-picture {
+        width: 40vw;
+        height: 40vw;
+        border: 0.5vw solid var(--primary);
+    }
+    
+}

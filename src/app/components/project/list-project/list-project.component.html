@@ -1,0 +1,59 @@
+<ul>
+    @if (DOING != undefined) {
+    <li class="project doing">
+        <span>{{ "projects.currentProject" | translate}}</span>
+        <div class="baseline">
+            <h3>{{DOING.name}}</h3>
+            <div class="description-container">
+                <p #description>{{ DOING.description.split('|')[(this.translate.currentLang == 'fr') ? 0 : 1] }}</p>
+            </div>
+            <ul class="projects--technologies">
+                @for (techno of DOING.technos; track techno) {
+                <li class="techno" [style.background]="techno | tehnoBackgroundColor">{{techno}}</li>
+                }
+            </ul>
+            <div class="links">
+                @if (DOING.link?.github != undefined && DOING.link?.github != '') {
+                <a target="_blank" [href]="DOING.link?.github">Voir le code source</a>
+                }
+            </div>
+        </div>
+    </li>
+    }
+    @for (project of CURRENT_PROJECT; track project; let i = $index) {
+    <li class="project">
+        <div class="baseline">
+            <h3>{{project.name}}</h3>
+            <div class="description-container">
+                <p #description>{{ project.description }}</p>
+            </div>
+            <ul class="projects--technologies">
+                @for (techno of project.technos; track techno) {
+                <li class="techno" [style.background]="techno | tehnoBackgroundColor">{{techno}}</li>
+                }
+            </ul>
+        </div>
+        <div class="links">
+            @if (project.link?.demo != undefined) {
+            <a target="_blank" [href]="project.link?.demo">{{
+                'projects.call-to-action.demo' | translate}}</a>
+            }
+            <a target="_blank" [href]="project.link?.github"
+                [ngClass]="(project.link?.demo != undefined) ? 'github-link' : '' ">{{
+                "projects.call-to-action.github" | translate}}</a>
+        </div>
+    </li>
+    }
+</ul>
+@if (PROJECTS != null && LESS_PROJECTS != null) {
+    
+        <div class="project-less_more">
+            <a [href]="(CURRENT_PROJECT == LESS_PROJECTS) ? '#projects' : null" (click)="toggleDisplayProject($event)" role="button">
+                @if (CURRENT_PROJECT == PROJECTS) {
+                    {{"projects.less-btn" | translate}}
+                } @else {
+                    {{"projects.more-btn" | translate}} (+{{ (PROJECTS.length - LESS_PROJECTS.length) }})
+                }
+            </a>
+        </div>
+}

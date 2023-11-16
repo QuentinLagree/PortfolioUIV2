@@ -1,0 +1,199 @@
+
+.header__top_bar {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: auto;
+    padding: 5px 0;
+    display: flex;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    transition: .3s;
+}
+
+.header__top_bar.fixed {
+    padding: 0 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-around;
+    background-color: var(--white);
+    box-shadow: 0 0 15px var(--shadow-color);
+    z-index: 999;
+}
+
+.header__top_bar h1 {
+    transition: .3s all;
+    padding-left: 25px;
+    min-width: max-content;
+}
+
+.header__top_bar .header__top_bar--nav,
+.header__top_bar.fixed .header__top_bar--nav {
+    margin: 0 100px;
+}
+
+
+.header__top_bar--nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__top_bar--nav li {
+    list-style-type: none;
+}
+
+
+.header__top_bar--nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 25px;
+    padding: 0;
+}
+
+.header__top_bar--nav ul li,
+.header__top_bar--nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0 25px;
+}
+
+.header__top_bar--nav ul li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.header__top_bar svg {
+    width: 20px;
+    margin-right: 10px;
+}
+
+
+.header__top_bar--nav p,
+    .header__top_bar svg path {
+        width: max-content;
+
+        stroke: var(--unactive-element);
+    color: var(--unactive-element);
+    text-decoration: none;
+    transition: 0.3s;
+    overflow: hidden;
+    transition: .5s all;
+}
+
+.header__top_bar--nav ul li:hover p,
+.header__top_bar--nav ul li.active p,
+.header__top_bar--nav ul li.active svg path,
+.header__top_bar--nav ul li:hover svg path,
+.header__top_bar--nav--lang--container--select:hover span,
+.header__top_bar--nav--lang--container--select:hover svg path,
+.header__top_bar--nav--lang--container.active .header__top_bar--nav--lang--container--select span,
+.header__top_bar--nav--lang--container.active .header__top_bar--nav--lang--container--select svg path {
+    color: var(--primary);
+    stroke: var(--primary);
+}
+
+.header__top_bar--nav-settings {
+    display: none;
+}
+
+.header__top_bar--nav--lang--container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.header__top_bar--nav--lang--container--select {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 5px 10px 15px;
+    border-radius: 2%;
+    overflow: hidden;
+}
+
+.header__top_bar--nav--lang--container--select-contain {
+    display: flex;
+    align-items: center;
+}
+
+.header__top_bar--nav--lang--container--select span { 
+    user-select: none;
+    color: var(--unactive-element)
+}
+
+.header__top_bar--nav--lang--container--select-arrow {
+    rotate: -90deg;
+    transition: .3s;
+}
+
+.header__top_bar--nav--lang--container--select:hover .header__top_bar--nav--lang--container--select-arrow {
+    rotate: 0deg;
+}
+
+.header__top_bar--nav--lang--container--langs {
+    padding: 0;
+    position: absolute;
+    display: flex;
+    box-shadow: 0 0 8px var(--shadow-color);
+    border-radius: 5%;
+    flex-direction: column;
+    align-items: center;
+    top: 80%;
+    opacity: 0;
+    pointer-events: none;
+    background:var(--white);
+    overflow: hidden;
+    left: 0;
+    margin-top: 11px;
+    height: auto;
+    width: auto;
+    transition: .5s;
+}
+
+.header__top_bar--nav--lang--container.active .header__top_bar--nav--lang--container--langs {
+    opacity: 1;
+    top: 100%;
+    pointer-events: all;
+    width: auto;
+}
+
+.header__top_bar--nav--lang--container.active .header__top_bar--nav--lang--container--select .header__top_bar--nav--lang--container--select-arrow  {
+    rotate: 0deg;
+}
+
+.header__top_bar--nav--lang--container--langs li {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    transition: .3s;
+}
+
+.header__top_bar--nav--lang--container--langs li:hover {
+    background-color: var(--background-grey);
+    color: var(--primary)
+}
+
+.header__top_bar--nav--lang--container--langs li span {
+    width: 100%;
+    user-select: none;
+}
+
+.header__top_bar .header__top_bar--nav-settings {
+    display: none;
+}

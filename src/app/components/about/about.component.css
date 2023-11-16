@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+#about {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+    color: var(--white);
+    padding: 90px;
+    background: url("/assets/bgabout.jpg") top right no-repeat var(--primary-background);
+    clip-path: polygon(0 8%, 100% 0%, 100% 100%, 0 92%);
+    
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 3em;
+}
+
+#about a {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--secondary);
+    padding: .8vw 1.5vw;
+    text-align: center;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.4em;
+    border-radius: 1.5%;
+    transition: .3s all;
+}
+
+#about a:hover {
+    background-color: var(--secondary-hover);
+}
+#about figcaption {
+    position: relative;
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: inherit;
+}
+
+#about figcaption caption {
+    width: 80%;
+    font-size: 1.2em;
+    padding-left: 85px;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+#about figcaption caption p {
+    margin: 25px 0;
+}
+
+
+
+a {
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#about figcaption figure {
+    margin-left: 15%;
+    width: 250px;
+    height: 450px;
+    border-radius: 20px;
+    border: 5px solid var(--secondary);
+}
